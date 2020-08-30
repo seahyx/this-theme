@@ -1,2 +1,27 @@
-// Placeholder to allow defining custom styles that override everything else.
-// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+/* Full Underline Reveal */
+@mixin full-underline-reveal {
+	$duration: $duration-short;
+	$color: $brand-color-light;
+
+	background-image: linear-gradient($color, $color);
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+	background-size: 100% 2px;
+
+	@include prefixed(transition, background-size $duration ease-out);
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-size: 100% 100%;
+	}
+}
+
+a {
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	@include full-underline-reveal();
+}
