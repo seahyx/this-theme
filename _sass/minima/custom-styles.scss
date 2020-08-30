@@ -25,3 +25,7 @@ a {
 
 	@include full-underline-reveal();
 }
+
+body {
+	overflow: hidden overlay;
+}
